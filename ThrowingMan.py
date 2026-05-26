@@ -17,15 +17,22 @@ visualList[-4][0]= " 0"
 for w in range(len(visualList)) :
     print(*visualList[w], end="\n")
 
+    #visualList[-y][x]= "*"
 
 throwForce = int(input("Enter the Throwing strenght : "))
 
-for x in range(throwForce * 2) :
-    if x > throwForce :
-        
-    yPos = x**2 + 2
-    visualList[-x - 2][yPos-1]= "*" 
-    time.sleep(1)
+for x in range(0, throwForce * 2, 1) :
+    '''if x < throwForce :
+        yPos = x**2 + 2
+        visualList[-x - 2][yPos-1]= "*" 
+    time.sleep(1)'''
+    '''elif x > throwForce :
+        yPos = x**2 - 2
+        visualList[-x - 2][yPos-1]= "*" 
+        #time.sleep(1)'''
+    
+    yPos = round(-(x + 2)**2)
+    visualList[(yPos-2)][x + 1]= "*" 
 
     for w in range(len(visualList)) :
         print(*visualList[w], end="\n")
